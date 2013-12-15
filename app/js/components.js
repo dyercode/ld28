@@ -77,10 +77,6 @@ Crafty.c('DraggablePiece', {
 				this.startDrag();
 			}
 		});
-		//this.bind('MouseUp', function() {
-			//this.stopDrag();
-			//this.snapToSlot(this);
-		//});
 	},
 	snapToSlot: function(piece) {
 		var snapped = false;
