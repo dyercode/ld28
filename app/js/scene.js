@@ -30,6 +30,7 @@ Crafty.scene('Game', function() {
 	var slots = scenario.slots;
 	var goal = scenario.goal;
 	Crafty.background('rgb(0,0,0)');
+	Crafty.e('Description').text(goal.description).attr({x:200});
 	this.injectMagic = this.bind('InjectMagic', function() {
 		if (_.any(slots, function(slot) {
 			return !slot.piece;

@@ -128,3 +128,11 @@ Crafty.c('Receiver', {
 		this.requires('Piece, spr_receiver');
 	}
 });
+
+Crafty.c('Description', {
+	init: function() {
+		this.requires('2D, Canvas, Text')
+		.textColor('#00FF00')
+		.textFont({size:'18px'});
+	}
+});
