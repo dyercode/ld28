@@ -1,10 +1,10 @@
 var Game = {
 	mapGrid: {
-		width: 36,
-		height: 24,
+		width: 16,
+		height: 9,
 		tile: {
-			width: 16,
-			height: 16
+			width: 64,
+			height: 64
 		}
 	},
 	width: function() {
@@ -26,6 +26,6 @@ var Game = {
 		Crafty.init(Game.width(), Game.height());
 		//Crafty.background('rgb(87, 109, 20)');
 		Crafty.background('rgb(0,0,0)');
-		Crafty.scene('Game');
+		Crafty.scene('Loading');
 	}
 };
