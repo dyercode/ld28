@@ -82,7 +82,7 @@ Crafty.c('DraggablePiece', {
 		var snapped = false;
 		_.each(Crafty('Slot'), function(s) {
 			var slot = Crafty(s);
-			if (slot.intersect(piece) && nearby(slot, piece)) {
+			if (!slot.piece && slot.intersect(piece) && nearby(slot, piece)) {
 				snapped = true;
 				slot.piece = piece;
 				piece.x = slot.x;
