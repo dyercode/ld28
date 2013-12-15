@@ -26,5 +26,6 @@ var Game = {
 		Crafty.init(Game.width(), Game.height());
 		Crafty.background('rgb(0,0,0)');
 		Crafty.scene('Loading');
-	}
+	},
+    scenario:{}
 };

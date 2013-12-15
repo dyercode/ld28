@@ -44,8 +44,9 @@ var scenario2 = function() {
 	return {slots:slots, goal:goal};
 };
 
+
 Crafty.scene('Game', function() {
-	var scenario = scenario1();
+	var scenario = Game.scenario();
 	var slots = scenario.slots;
 	var goal = scenario.goal;
 	Crafty.background('rgb(0,0,0)');
@@ -91,7 +92,10 @@ Crafty.scene('Victory', function() {
     .attr({ x: 0, y: 0 })
     .text('Victory!');
  
-	this.restart_game = function() {Crafty.scene('Game');};
+	this.restart_game = function() {
+		Game.scenario = scenario2;
+		Crafty.scene('Game');
+	};
 	this.bind('MouseDown', this.restart_game);
 	this.bind('KeyDown', this.restart_game);
 }, function() {
@@ -120,13 +124,8 @@ Crafty.scene('Loading', function(){
     Crafty.sprite(64, 'img/button.png', {
 		spr_button: [0,0,2]
     });
-    
-	Crafty.audio.add({
-		knock: ['img/door_knock_3x.mp3',
-			'img/door_knock_3x.ogg',
-			'img/door_knock_3x.aac']
-	});
 
+    Game.scenario = scenario1;
     Crafty.scene('Game');
   });
 });
