@@ -117,6 +117,15 @@ Crafty.c('Freezer', {
 	}
 });
 
+Crafty.c('Gearbox', {
+	init: function() {
+		this.requires('DraggablePiece, spr_gearbox');
+	},
+	applyEffects: function(packet) {
+		return Pieces.gearbox(packet);
+	}
+});
+
 Crafty.c('Cannon', {
 	init: function() {
 		this.requires('Piece, spr_cannon');

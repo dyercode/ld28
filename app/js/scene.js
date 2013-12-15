@@ -25,6 +25,25 @@ var scenario1 = function() {
 	return {slots:slots, goal:goal};
 };
 
+var scenario2 = function() {
+	Crafty.e('Cannon').at(6,4);
+	var slots = [
+		Crafty.e('Slot').at(7,4),
+		Crafty.e('Slot').at(8,4),
+		Crafty.e('Slot').at(9,4)
+	];
+	Crafty.e('Receiver').at(10,4);
+	Crafty.e('Button').at(7,8);
+	createAllowedPiecesForScenario(['Heater','Freezer', 'Gearbox']);
+	var goal = {
+		description: 'Warm magic is required.',
+		test: function(result) {
+			return (result.warm && !result.hot && !result.cold);
+		}
+	};
+	return {slots:slots, goal:goal};
+};
+
 Crafty.scene('Game', function() {
 	var scenario = scenario1();
 	var slots = scenario.slots;
